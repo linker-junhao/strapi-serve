@@ -3,6 +3,5 @@ CMD ["sh", "/docker-entrypoint.d/docker-init.sh"]
 COPY ./ /var/strapi-serve
 COPY docker-init.sh /docker-entrypoint.d/docker-init.sh
 
-RUN npm install \
-    && cd /var/strapi-serve && npm install \
-    && npm run build
+RUN cd /var/strapi-serve && npm -v \
+    && npm install && npm run build
