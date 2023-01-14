@@ -9,7 +9,7 @@ ENV PATH /opt/node_modules/.bin:$PATH
 RUN npm install --production
 WORKDIR /opt/app
 COPY ./ .
-RUN npm run build
+RUN cp ./.env.production ./.env && npm run build
 
 
 FROM node:18.12.1-alpine
